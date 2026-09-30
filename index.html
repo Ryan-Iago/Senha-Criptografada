@@ -4,22 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Codificador de Senha por Etapas</title>
-  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="container">
     <h1>🔒 Codificador de Senha</h1>
-    <p class="subtitle">Insira uma senha para ver o processo de encriptação em tempo real.</p>
 
-    <div class="input-group">
-      <input type="text" id="passwordInput" placeholder="Digite sua senha..." value="Segredo123" />
-      <button onclick="codificar()">Codificar</button>
+    <!-- Menu de Abas -->
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="switchTab('encoder')">Codificador</button>
+      <button class="tab-btn" onclick="switchTab('about')">O que é Cifra de César?</button>
     </div>
 
-    <!-- Resultados das Etapas -->
-    <div id="steps" class="steps-container"></div>
+    <!-- Aba 1: Codificador -->
+    <div id="tab-encoder" class="tab-content active">
+      <p class="subtitle">Insira uma senha para ver o processo de encriptação e verificação.</p>
+
+      <div class="input-group">
+        <input type="text" id="passwordInput" placeholder="Digite sua senha..." value="Segredo123" />
+        <button onclick="codificar()">Codificar</button>
+      </div>
+
+      <!-- Resultados das 4 Etapas -->
+      <div id="steps" class="steps-container"></div>
+    </div>
+
+    <!-- Aba 2: Explicativa -->
+    <div id="tab-about" class="tab-content">
+      <h2>📜 A Cifra de César</h2>
+      <p class="info-text">
+        A <strong>Cifra de César</strong> é uma das técnicas de encriptação mais antigas e conhecidas da história. Criada por Júlio César para proteger mensagens militares secretas em Roma.
+      </p>
+      <p class="info-text">
+        <strong>Como funciona?</strong><br>
+        É uma cifra de substituição simples onde cada letra do texto original é substituída por outra que se encontra um número fixo de posições mais à frente no alfabeto (ou na tabela de caracteres).
+      </p>
+
+      <div class="example-box">
+        <p><strong>Exemplo com deslocamento +3:</strong></p>
+        <ul>
+          <li>Letra <code>A</code> vira <code>D</code></li>
+          <li>Letra <code>B</code> vira <code>E</code></li>
+          <li>Palavra <code>GATO</code> vira <code>JDWR</code></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
