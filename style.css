@@ -1,34 +1,86 @@
-/* Estilo das Abas */
+/* Reset Básico e Fontes Modernas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Centralização Perfeita da Tela */
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Card Principal */
+.container {
+  background-color: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(12px); /* Efeito de vidro fosco */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 650px;
+  text-align: center; /* Centraliza títulos e textos principais */
+}
+
+/* Títulos */
+h1 {
+  color: #38bdf8;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+p.subtitle {
+  color: #94a3b8;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* Abas de Navegação (Centralizadas) */
 .tab-buttons {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #334155;
-  padding-bottom: 10px;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 15px;
 }
 
 .tab-btn {
-  background-color: transparent;
+  background-color: rgba(15, 23, 42, 0.6);
   color: #94a3b8;
-  border: none;
-  padding: 8px 16px;
+  border: 1px solid #334155;
+  padding: 10px 20px;
   font-size: 0.95rem;
-  border-radius: 6px;
+  font-weight: 600;
+  border-radius: 30px; /* Estilo pílula */
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .tab-btn:hover {
   color: #f8fafc;
   background-color: #334155;
+  transform: translateY(-2px);
 }
 
 .tab-btn.active {
   background-color: #0284c7;
   color: white;
+  border-color: #38bdf8;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
 }
 
-/* Controle de Visibilidade das Abas */
+/* Visibilidade das Abas */
 .tab-content {
   display: none;
 }
@@ -37,11 +89,122 @@
   display: block;
 }
 
+/* Campo de Entrada e Botão */
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid #334155;
+  border-radius: 10px;
+  background-color: #0f172a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+button {
+  padding: 14px 24px;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 105, 161, 0.4);
+}
+
+/* Cards das Etapas */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left; /* Mantém a leitura dos códigos alinhada à esquerda */
+}
+
+.step-card {
+  background-color: #0f172a;
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 5px solid #38bdf8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateX(4px);
+}
+
+.step-title {
+  font-size: 0.85rem;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.step-desc {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.step-result {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: #4ade80;
+  word-break: break-all;
+  background-color: #1e293b;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Cores Diferenciadas para as Etapas Finais */
+.final-step {
+  border-left-color: #4ade80;
+}
+
+.final-step .step-title {
+  color: #4ade80;
+}
+
+.verify-step {
+  border-left-color: #a855f7;
+}
+
+.verify-step .step-title {
+  color: #a855f7;
+}
+
 /* Estilos da Aba Explicativa */
+#tab-about {
+  text-align: left;
+}
+
 #tab-about h2 {
   color: #38bdf8;
   margin-bottom: 15px;
   font-size: 1.4rem;
+  text-align: center;
 }
 
 .info-text {
@@ -53,14 +216,14 @@
 
 .example-box {
   background-color: #0f172a;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #38bdf8;
-  margin-top: 15px;
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 5px solid #38bdf8;
+  margin-top: 20px;
 }
 
 .example-box ul {
-  margin-top: 8px;
+  margin-top: 10px;
   margin-left: 20px;
   color: #94a3b8;
 }
@@ -68,15 +231,6 @@
 .example-box code {
   color: #4ade80;
   background-color: #1e293b;
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: 4px;
-}
-
-/* Estilo do Card da Etapa 4 (Verificação) */
-.verify-step {
-  border-left-color: #a855f7;
-}
-
-.verify-step .step-title {
-  color: #a855f7;
 }
